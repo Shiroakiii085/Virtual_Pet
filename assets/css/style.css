@@ -1,0 +1,85 @@
+/* assets/css/style.css */
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    max-width: 80%;
+    text-align: center;
+}
+
+.toast.visible {
+    opacity: 1;
+}
+
+/* Pet environment */
+.background-pattern {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+}
+
+/* Memory game */
+.memory-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.memory-card .front,
+.memory-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    border-radius: 0.375rem;
+}
+
+.memory-card .front {
+    transform: rotateY(180deg);
+}
+
+.memory-card .back {
+    transform: rotateY(0deg);
+}
+
+.memory-card.flipped .front {
+    transform: rotateY(0deg);
+}
+
+.memory-card.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Hide helper elements */
+.hidden {
+    display: none !important;
+}
+
+/* Medicine effect */
+.medicine-effect {
+    animation: pulse-green 1s ease-in-out;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+}
